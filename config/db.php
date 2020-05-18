@@ -9,7 +9,6 @@ try {
 
     $db->query("SELECT * FROM users");
 
-    echo 'coucou';
 }catch(PDOException $e) {
     die('Imposible de se connecter à la base de donnée. ' . $e->getMessage());
 }

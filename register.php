@@ -38,8 +38,20 @@ require('includes/functions.php');
             
             if(count($errors) == 0){
                 // ENVOIR MAIL ACTIVATION
+                $to = $mail;
+                $subject = WEBSITE_NAME. ' - activation du compte';
+                $token = sha1($pseudo.$mail.$password);
 
+                ob_start();
+                require('templates/emails/activation.view.php');
+                $content = ob_get_clean();
+
+                $headers = 'MIME-Version: 1.0' . "\r\n";
+                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                mail($to, $subject, $content, $headers);
                 //INFROMER USER DE VOIR SA BOITE MAIL
+                echo "mail d'activation envoyer";
             }
 
         }else {

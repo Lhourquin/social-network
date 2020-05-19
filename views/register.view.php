@@ -3,8 +3,19 @@ $title = "Register";
 require('partials/_head.php');
 ?>
 <div class="container text-center">
-<h1>Join Us ! </h1>
+<h1>Join Us !</h1>
 <div class="container-fluid col-md-6">
+
+<?php
+  if(isset($errors) && count($errors) != 0){
+    echo '<div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+      foreach($errors as $error){
+        echo $error . '<br/>';
+      }
+    echo "</div>";
+    }
+?>
 <form method="POST" id="formDataInscription">
                 <div class="form-row">
 

@@ -1,6 +1,3 @@
-<?php
-require('includes/constants.php'); 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

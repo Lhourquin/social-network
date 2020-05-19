@@ -1,7 +1,9 @@
+
 <?php
 // require file
 require('config/db.php');
 require('includes/functions.php');
+require('includes/constants.php');
     // SI LE FORMULAIRE EST SOUMIS
     if(isset($_POST['register'])){
 
@@ -16,7 +18,7 @@ require('includes/functions.php');
                 $errors[] = "Pseudo trop court min. 3 charactere !";
             }
 
-            if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
+            if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
                 $errors[] = "Adresse email invaldie!";
             }
 
@@ -38,20 +40,25 @@ require('includes/functions.php');
             
             if(count($errors) == 0){
                 // ENVOIR MAIL ACTIVATION
+                ob_start();
                 $to = $mail;
-                $subject = WEBSITE_NAME. ' - activation du compte';
+                $subject = WEBSITE_NAME . ' - activation du compte';
                 $token = sha1($pseudo.$mail.$password);
 
-                ob_start();
+                
                 require('templates/emails/activation.view.php');
                 $content = ob_get_clean();
 
                 $headers = 'MIME-Version: 1.0' . "\r\n";
                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
+                
+               
                 mail($to, $subject, $content, $headers);
                 //INFROMER USER DE VOIR SA BOITE MAIL
-                echo "mail d'activation envoyer";
+                echo '<div class="alert alert-primary">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              mail d\'activation envoyer
+          </div>';
             }
 
         }else {

@@ -39,9 +39,13 @@ require('includes/constants.php');
             }
             
             if(count($errors) == 0){
+              
+            require('.sendMail.php');
+
+                //require_once('sendMail.php');
                 // ENVOIR MAIL ACTIVATION
-                ob_start();
-                $to = $mail;
+                //$to = $mail;
+                /*ob_start();
                 $subject = WEBSITE_NAME . ' - activation du compte';
                 $token = sha1($pseudo.$mail.$password);
 
@@ -51,14 +55,25 @@ require('includes/constants.php');
 
                 $headers = 'MIME-Version: 1.0' . "\r\n";
                 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-                
-               
-                mail($to, $subject, $content, $headers);
+                */
+                //$senders = 'checkeboom59@gmail.com';
+
+                //$headers = 'From :' . $senders;
+               /*
+                mail($to, 'inscription', "Bonjour " . $name, $headers);
                 //INFROMER USER DE VOIR SA BOITE MAIL
-                echo '<div class="alert alert-primary">
+                if(mail($to, 'inscription', "Bonjour " . $name, $headers)){
+                    echo '<div class="alert alert-primary">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
               mail d\'activation envoyer
           </div>';
+                }else{
+                    echo '<div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              mail d\'activation non envoyer !!!!!!
+          </div>';
+                }
+                */
             }
 
         }else {

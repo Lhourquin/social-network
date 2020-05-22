@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 // require file
 require('config/db.php');
 require('includes/functions.php');
@@ -41,7 +42,8 @@ require('includes/constants.php');
             if(count($errors) == 0){
               
             require('.sendMail.php');
-
+            set_flash("Mail d'activation envoyer !", "success");
+            redirect('index.php');
                 //require_once('sendMail.php');
                 // ENVOIR MAIL ACTIVATION
                 //$to = $mail;

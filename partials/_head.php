@@ -21,4 +21,5 @@
 <body>
 <?php
 include('partials/_nav.php');
+include('partials/_flash.php');
 ?>

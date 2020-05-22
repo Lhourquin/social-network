@@ -31,3 +31,19 @@
             return $count;
         }
     }
+
+    // SET FLASH
+    if(!function_exists('set_flash')){
+        function set_flash($message , $type = 'info'){
+            $_SESSION['notification']['message'] = $message;
+            $_SESSION['notification']['type'] = $type;
+        }
+    }
+
+    // REDIRECT
+    if(!function_exists('redirect')){
+        function redirect($page){
+            header('Location: ' . $page);
+            exit();
+        }
+    }

@@ -1,5 +1,15 @@
 <?php
 
+// check if not html or script    
+if(!function_exists('e')){
+    function e($string){
+        if($string){
+            return htmlspecialchars($string);
+            }
+        }
+    }
+
+
 
     // check if all filds not empty    
     if(!function_exists('not_empty')){
@@ -47,3 +57,39 @@
             exit();
         }
     }
+
+        // save input data
+
+        if(!function_exists('save_input_data')){
+            function save_input_data(){
+                foreach($_POST as $key => $value){
+                    if(strpos($key, 'password') === false){
+                         $_SESSION['input'][$key] = $value;
+                    }
+                   
+                }
+            }
+        }
+//get input 
+
+         if(!function_exists('get_input')){
+            function get_input($key){
+               if(!empty($_SESSION['input'][$key])){
+                  return e($_SESSION['input'][$key]); 
+               }else{
+                   return null;
+               }
+                    
+            
+            }
+        }
+
+        // clear input data
+
+        if(!function_exists('clear_input_data')){
+            function clear_input_data(){
+                if(isset($_SESSION['input'])){
+                    $_SESSION['input'] = [];
+                }
+            }
+        }

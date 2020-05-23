@@ -15,59 +15,59 @@ require('partials/_head.php');
                 <!-- FIRST NAME -->
                   <div class="col form-group">
                     <label for="name">First name </label>   
-                    <input type="text" class="inputDataOfSuscribeForm form-control" name="name" id="name" placeholder="" required="require">
+                    <input type="text" class="inputDataOfSuscribeForm form-control" name="name" value="<?=get_input('name')?>" id="name" placeholder="" required="require">
                   </div> <!-- form-group end.// -->
 
                   <!-- LASTNAME -->
                   <div class="col form-group">
                     <label for="lastName">Last name</label>
-                    <input type="text" class="inputDataOfSuscribeForm form-control" name="lastName" id="lastName" placeholder=" " required="require">
+                    <input type="text" class="inputDataOfSuscribeForm form-control" name="lastName" value="<?=get_input('lastName')?>" id="lastName" placeholder=" " required="require">
                   </div> <!-- form-group end.// -->
                 </div> <!-- form-row end.// -->
 
                 <!-- MAIL ADRESS -->
                 <div class="form-group">
                   <label for="mail">Email address</label>
-                  <input type="email" class="inputDataOfSuscribeForm form-control" name="mail" id="mail" placeholder="" required="require">
+                  <input type="email" class="inputDataOfSuscribeForm form-control" name="mail" value="<?=get_input('mail')?>" id="mail" placeholder="" required="require">
                   <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div> <!-- form-group end.// -->
 
                 <!-- PSEUDO -->
                 <div class="form-group">
                   <label for="pseudo">Pseudo</label>
-                  <input type="text" class="inputDataOfSuscribeForm form-control" name="pseudo" id="pseudo" placeholder="" required="require">
+                  <input type="text" class="inputDataOfSuscribeForm form-control" name="pseudo" value="<?=get_input('pseudo')?>" id="pseudo" placeholder="" required="require">
                 </div> <!-- form-group end.// -->
-
-                <!-- GENDER -->
+                <!--
+                <!-- GENDER >
                 <div class="form-group">
                   <label for="gender">
 
-                  <!-- WOMEN -->
+                  <!-- WOMEN 
                     <label class="form-check form-check-inline">
-                      <input class="inputDataOfSuscribeForm form-check-input" type="radio" name="genderS" id="female" value="Women" required="require">Women</input>
+                      <input class="inputDataOfSuscribeForm form-check-input" type="radio" name="genderS" value="<?=get_input('genderS')?>" id="female"  required="require">Women</input>
 
-                    <!-- MEN -->
+                    <!-- MEN
                     </label>
                     <label class="form-check form-check-inline">
-                      <input class="inputDataOfSuscribeForm form-check-input" type="radio" name="genderS" id="male" value="Men" required="require">Men</input>
+                      <input class="inputDataOfSuscribeForm form-check-input" type="radio" name="genderS" value="<?=get_input('genderS')?>" id="male"  required="require">Men</input>
 
                     </label>
                   </label>
                 </div> <!-- form-group end.// -->
 
-                <!-- CITY -->
+                <!-- CITY 
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="city">City</label>
-                    <input type="text" class="inputDataOfSuscribeForm form-control" name="city" id="city" required="require">
+                    <input type="text" class="inputDataOfSuscribeForm form-control" name="city" value="<?=get_input('city')?>" id="city" required="require">
                   </div> <!-- form-group end.// -->
 
-                  <!-- AGE -->
+                  <!-- AGE 
                   <div class="form-group col-md-6">
                     <label for="age">Age</label>
-                    <input type="number" class="inputDataOfSuscribeForm form-control" name="age" id="age" required="require">
-                  </div> <!-- form-group end.// -->
-                </div> <!-- form-row.// -->
+                    <input type="number" class="inputDataOfSuscribeForm form-control" name="age" value="<?=get_input('age')?>" id="age" required="require">
+                  </div> <!-- form-group end.// 
+                </div>  form-row.// -->
 
                 <!-- PASSWORD -->
                 <div class="form-group">

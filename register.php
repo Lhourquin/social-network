@@ -9,7 +9,7 @@ require('includes/constants.php');
     if(isset($_POST['register'])){
 
         // SI TOUS LES CHAMLPS SONT REMPLIS
-        if(not_empty(['name', 'lastName', 'pseudo', 'mail', 'genderS', 'city', 'age', 'password', 'passwordConfirm'])){
+        if(not_empty(['name', 'lastName', 'pseudo', 'mail', 'password', 'passwordConfirm'])){
 
             $errors = [];
 
@@ -76,11 +76,16 @@ require('includes/constants.php');
           </div>';
                 }
                 */
+            }else{
+                save_input_data();
             }
 
         }else {
             $errors[] = "Veuillez remplir tout les champs !";
+            save_input_data();
         }
+    }else {
+        clear_input_data();
     }
 
 ?>

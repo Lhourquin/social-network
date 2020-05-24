@@ -10,7 +10,7 @@
       <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="connection.php">Connection</a>
+      <a class="nav-link" href="login.php">Connection</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="register.php">Register</a>

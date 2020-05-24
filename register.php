@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 // require file
@@ -43,6 +42,18 @@ require('includes/constants.php');
               
             require('.sendMail.php');
             set_flash("Mail d'activation envoyer !", "success");
+
+            $query = $db->prepare("INSERT INTO users(name, lastName, pseudo, mail, password) VALUES(:name , :lastName, :pseudo , :mail, :password)");
+
+                                    
+            $query->execute([
+                'name' => $name,
+                'lastName' => $lastName,
+                'pseudo' => $pseudo,
+                'mail' => $mail,
+                'password' => sha1($password)
+            ]);
+
             redirect('index.php');
                 //require_once('sendMail.php');
                 // ENVOIR MAIL ACTIVATION

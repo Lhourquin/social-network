@@ -1,4 +1,4 @@
 <?php
 define('WEBSITE_NAME', 'Doomatyoh Network');
-define('WEBSITE_URL', 'http:localhost:3306');
+define('WEBSITE_URL', 'localhost/social-network');
 ?>

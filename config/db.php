@@ -7,8 +7,6 @@ try {
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $db->query("SELECT * FROM users");
-
 }catch(PDOException $e) {
     die('Imposible de se connecter à la base de donnée. ' . $e->getMessage());
 }

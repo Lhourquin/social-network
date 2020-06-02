@@ -93,3 +93,15 @@ if(!function_exists('e')){
                 }
             }
         }
+
+        // check if active    
+if(!function_exists('set_active')){
+    function set_active($file){
+        $page = array_pop(explode('/', $_SERVER['SCRIPT_NAME']));
+        if($page == $file . '.php'){
+            return 'active';
+        }else{
+            return '';
+        }
+        }
+    }

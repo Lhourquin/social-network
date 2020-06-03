@@ -9,33 +9,33 @@ require('partials/_head.php');
 <?php
   include('partials/_errors.php');
 ?>
-<form method="POST" id="formDataInscription">
+<form data-parsley-validate method="POST" id="formDataInscription" autocomplete="off">
                 <div class="form-row">
 
                 <!-- FIRST NAME -->
                   <div class="col form-group">
                     <label for="name">First name </label>   
-                    <input type="text" class="inputDataOfSuscribeForm form-control" name="name" value="<?=get_input('name')?>" id="name" placeholder="" required="require">
+                    <input type="text" class="inputDataOfSuscribeForm form-control" name="name" value="<?=get_input('name')?>" id="name" placeholder="" required="require" autocomplete="off" data-parsley-trigger="change" >
                   </div> <!-- form-group end.// -->
 
                   <!-- LASTNAME -->
                   <div class="col form-group">
                     <label for="lastName">Last name</label>
-                    <input type="text" class="inputDataOfSuscribeForm form-control" name="lastName" value="<?=get_input('lastName')?>" id="lastName" placeholder=" " required="require">
+                    <input type="text" class="inputDataOfSuscribeForm form-control" name="lastName" value="<?=get_input('lastName')?>" id="lastName" placeholder=" " required="require" autocomplete="off" data-parsley-trigger="change">
                   </div> <!-- form-group end.// -->
                 </div> <!-- form-row end.// -->
 
                 <!-- MAIL ADRESS -->
                 <div class="form-group">
                   <label for="mail">Email address</label>
-                  <input type="email" class="inputDataOfSuscribeForm form-control" name="mail" value="<?=get_input('mail')?>" id="mail" placeholder="" required="require">
+                  <input type="email" class="inputDataOfSuscribeForm form-control" name="mail" value="<?=get_input('mail')?>" id="mail" placeholder="" required="require" autocomplete="off"  data-parsley-trigger="change" >
                   <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div> <!-- form-group end.// -->
 
                 <!-- PSEUDO -->
                 <div class="form-group">
                   <label for="pseudo">Pseudo</label>
-                  <input type="text" class="inputDataOfSuscribeForm form-control" name="pseudo" value="<?=get_input('pseudo')?>" id="pseudo" placeholder="" required="require">
+                  <input type="text" class="inputDataOfSuscribeForm form-control" name="pseudo" value="<?=get_input('pseudo')?>" id="pseudo" placeholder="" required="require" autocomplete="off" minlength="3" data-parsley-minlength="3" data-parsley-trigger="change">
                 </div> <!-- form-group end.// -->
                 <!--
                 <!-- GENDER >
@@ -72,13 +72,13 @@ require('partials/_head.php');
                 <!-- PASSWORD -->
                 <div class="form-group">
                   <label for="password">Create password</label>
-                  <input class="inputDataOfSuscribeForm form-control" type="password" name="password" id="password" required="require">
+                  <input class="inputDataOfSuscribeForm form-control" type="password" name="password" id="password" required="require" autocomplete="off" data-parsley-trigger="change">
                 </div> <!-- form-group end.// -->  
 
                 <!-- CONFIRM PASSWORD -->
                 <div class="form-group">
                   <label for="passwordConfirm">Confirm password</label>
-                  <input class="inputDataOfSuscribeForm form-control" type="password" name="passwordConfirm" id="passwordConfirm" required="require">
+                  <input class="inputDataOfSuscribeForm form-control" type="password" name="passwordConfirm" id="passwordConfirm" required="require" autocomplete="off" data-parsley-equalto="#password" data-parsley-trigger="change">
                 </div> <!-- form-group end.// -->  
 
                 <!-- SUBMIT -->

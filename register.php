@@ -2,6 +2,7 @@
 session_start();
 // require file
 require('config/db.php');
+include('filters/guest_filter.php');
 require('includes/functions.php');
 require('includes/constants.php');
     // SI LE FORMULAIRE EST SOUMIS

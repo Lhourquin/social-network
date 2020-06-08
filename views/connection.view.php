@@ -10,8 +10,8 @@ require('partials/_head.php');
             <div  id="form-conection">
                 <form data-parsley-validate method="POST" autocomplete="off">
                     <div class="form-group">
-                        <label for="user">Email address</label>
-                        <input type="text" class="form-control" id="user" name="user" aria-describedby="emailHelp" placeholder="Enter email or Pseudo" value="<?= get_input('user')?>" required>
+                        <label for="identifiant">Email address</label>
+                        <input type="text" class="form-control" id="identifiant" name="identifiant" aria-describedby="emailHelp" placeholder="Enter email or Pseudo" value="<?= get_input('identifiant')?>" required>
                         <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
